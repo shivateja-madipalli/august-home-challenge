@@ -1,0 +1,20 @@
+{
+  "name": "augusthomecsvreader",
+  "version": "1.0.0",
+  "description": "This is August Home CSV reader ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivateja Madipalli",
+  "license": "ISC",
+  "dependencies": {
+    "command-line-args": "^3.0.5",
+    "csv": "^1.1.0",
+    "line-by-line": "^0.1.5",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.21",
+    "mongoose": "^4.7.7",
+    "promise": "^7.1.1"
+  }
+}

@@ -1,0 +1,25 @@
+[{
+    "headerName" : "serialNumber",
+    "ignore" : false,
+    "dbName" : "SerialNumber",
+    "criteria" : "^(D1[0-9A-Z]{8})$",
+    "type" : "string"
+  },{
+    "headerName" : "skuNumber",
+    "ignore" : false,
+    "dbName" : "skuNumber",
+    "criteria" : "^(AUG-AB[0-9]{2})|(02-01-001)$",
+    "type" : "string"
+  },{
+    "headerName" : "augfirmware",
+    "ignore" : false,
+    "dbName" : "augfirmware",
+    "criteria" : "",
+    "type" : "string"
+  },{
+    "headerName" : "battserialnumber",
+    "ignore" : false,
+    "dbName" : "batterySerialNumber",
+    "criteria" : "^([0-9A-Z]{10})$",
+    "type" : "string"
+}]
