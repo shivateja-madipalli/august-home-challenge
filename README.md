@@ -6,7 +6,7 @@ The whole processing is in this file.
 
 The Architecture of the application:
 
-![alt tag](https://github.com/shivateja-madipalli/august-home-challenge/blob/new_changes/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png?raw=true "")
 
 The above Architecture explains a lot.
 
@@ -16,68 +16,65 @@ The above Architecture explains a lot.
 •	If Serial Number is available in previous records, then the error message is shown and process is aborted.
 •	If Serial Number is not available in previous records, then it will be inserted first and the serial number is used as key for other records.
 
+### node importManufacturingData.js doorbell config/csv/doorbell.csv
 
-Example:
-Serial Number  q1w2e3r4t5y6u7
-Other fields   q1w2e3r4t5y6u7: other field value
-•	The collection name of serial number and all other fields are fetched from device type config.
-•	Once all the data is inserted a message with success count, failure count and appropriate message are shown.
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%202.42.29%20PM.png?raw=true "")
 
+### Result:
+
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%202.42.59%20PM.png?raw=true "")
+
+
+### node importManufacturingData.js connect config/csv/connect.csv
+
+![Alt text](screenshots/Screen%20Shot%202017-01-18%20at%202.44.15%20PM.png?raw=true "")
+
+### Result:
+
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%202.44.30%20PM.png?raw=true "")
+
+_Example:_
+
+* Serial Number  q1w2e3r4t5y6u7
+* Other fields   q1w2e3r4t5y6u7: other field value
+
+* The collection name of serial number and all other fields are fetched from device type config.
+* Once all the data is inserted a message with success count, failure count and appropriate message are shown.
 
 
 _Project Structure_
 
-├── config
-│   ├── configs
-│   │   ├── connect.conf.json
-│   │   ├── deviceType.js
-│   │   └── doorbell.conf.json
-│   ├── csv
-│   │   ├── connect.csv
-│   │   └── doorbell.csv
-│   ├── driver.js
-│   ├── getDeviceConfig.js
-│   └── sanityCheck.js
-├── importManufacturingData.js
-├── old_files
-│   ├── index.js
-│   ├── old.js
-│   ├── playground.js
-│   └── updated.js
-└── package.json
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%204.40.17%20PM.png?raw=true "")
 
-The tree structure above explains about the file structuring.
+* The tree structure above explains about the file structuring.
 
-/config has all the configuration related file such as 
+* /config has all the configuration related file such as 
 
-/csv  device csv files
+* /csv  device csv files
 
-getDeviceConfig.js  Is used for retrieving device config files.
+* getDeviceConfig.js  Is used for retrieving device config files.
 
-/configs  has all config files and deviceType.js which provides api to retrieving and processing the data.
+* /configs  has all config files and deviceType.js which provides api to retrieving and processing the data.
 
-Important pointers:
-•	A common database is used for all collections. The collection name would be the dbName from device config file.
-•	Multiple devices with same fields data would be inserted in common collections.
-•	Serial Number is used as the Primary Key.
-•	
-The provider's file's first line includes a headers line.
+### Important pointers:
+* A common database is used for all collections. The collection name would be the dbName from device config file.
+* Multiple devices with same fields data would be inserted in common collections.
+* Serial Number is used as the Primary Key.
+* The provider's file's first line includes a headers line.
+* For each device type, the importManufacturingData will know what headers are expected through some configuration.
+* The system will abort if there is a missing required column.
+* The system will not import a row if some data doesn't match the specified criteria.
 
-•	For each device type, the importManufacturingData will know what headers are expected through some configuration.
+### Limitations:
+* Currently, to import a config file, it should be placed in config/configs/ and need to be required in getDeviceConfig.js, where there is a switch case to return the appropriate config file per the device name.
+* File format is limited to csv files.
 
-•	The system will abort if there is a missing required column.
+### Future Enhancements:
+* The File format need not be restricted.
+* System can be made to accept any config file available just by placing at specified location.
+* Instead of collections, the data can be saved in individual database using connectionpool.
 
-•	The system will not import a row if some data doesn't match the specified criteria.
-
-
-
-Limitations:
-•	Currently, to import a config file, it should be placed in config/configs/ and need to be required in getDeviceConfig.js, where there is a switch case to return the appropriate config file per the device name.
-•	File format is limited to csv files.
-
-Future Enhancements:
-•	The File format need not be restricted.
-•	System can be made to accept any config file available just by placing at specified location.
-•	Instead of collections, the data can be saved in individual database using connectionpool.
+_Shivateja(Shiv) Madipalli_
+_https://shivatejam.com_
 
 
