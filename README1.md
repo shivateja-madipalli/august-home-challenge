@@ -6,7 +6,7 @@ The whole processing is in this file.
 
 The Architecture of the application:
 
-![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png?raw=true "Optional Title")
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png?raw=true "")
 
 The above Architecture explains a lot.
 
@@ -15,6 +15,23 @@ The above Architecture explains a lot.
 •	If all the headers are present, sanity check for different fields (dependent on the device config) will take place to check if all the fields are within the specified criteria.
 •	If Serial Number is available in previous records, then the error message is shown and process is aborted.
 •	If Serial Number is not available in previous records, then it will be inserted first and the serial number is used as key for other records.
+
+### node importManufacturingData.js doorbell config/csv/doorbell.csv
+
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%202.42.29%20PM.png?raw=true "")
+
+### Result:
+
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%202.42.59%20PM.png?raw=true "")
+
+
+### node importManufacturingData.js connect config/csv/connect.csv
+
+![Alt text](screenshots/Screen%20Shot%202017-01-18%20at%202.44.15%20PM.png?raw=true "")
+
+### Result:
+
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%202.44.30%20PM.png?raw=true "")
 
 
 Example:
@@ -25,26 +42,22 @@ Other fields   q1w2e3r4t5y6u7: other field value
 
 
 
+
 _Project Structure_
 
-├── config
-│   ├── configs
-│   │   ├── connect.conf.json
-│   │   ├── deviceType.js
-│   │   └── doorbell.conf.json
-│   ├── csv
-│   │   ├── connect.csv
-│   │   └── doorbell.csv
-│   ├── driver.js
-│   ├── getDeviceConfig.js
-│   └── sanityCheck.js
-├── importManufacturingData.js
-├── old_files
-│   ├── index.js
-│   ├── old.js
-│   ├── playground.js
-│   └── updated.js
-└── package.json
+* config
+ * configs
+  * connect.conf.json
+  * deviceType.js
+  * doorbell.conf.json
+ * csv
+  * connect.csv
+  * doorbell.csv
+ * driver.js
+ * getDeviceConfig.js
+ * sanityCheck.js
+* importManufacturingData.js 
+* package.json
 
 The tree structure above explains about the file structuring.
 
