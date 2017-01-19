@@ -40,36 +40,15 @@ Other fields   q1w2e3r4t5y6u7: other field value
 *	The collection name of serial number and all other fields are fetched from device type config.
 *	Once all the data is inserted a message with success count, failure count and appropriate message are shown.
 
-
-.
-+-- _config
-|   +-- configs
-|   	+-- connect.conf.json
-+-- _includes
-|   +-- footer.html
-|   +-- header.html
-+-- _layouts
-|   +-- default.html
-|   +-- post.html
-+-- _posts
-|   +-- 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   +-- 2009-04-26-barcamp-boston-4-roundup.textile
-+-- _data
-|   +-- members.yml
-+-- _site
-+-- index.html
-
-
-
-
 _Project Structure_
 
 * config
+
  * configs
   * connect.conf.json
   * deviceType.js
   * doorbell.conf.json
- * csv
+* csv
   * connect.csv
   * doorbell.csv
  * driver.js
@@ -77,6 +56,26 @@ _Project Structure_
  * sanityCheck.js
 * importManufacturingData.js 
 * package.json
+
+```
+project
+│   README.md
+│   file001.txt    
+│
+└───folder1
+│   │   file011.txt
+│   │   file012.txt
+│   │
+│   └───subfolder1
+│       │   file111.txt
+│       │   file112.txt
+│       │   ...
+│   
+└───folder2
+    │   file021.txt
+    │   file022.txt
+```
+
 
 The tree structure above explains about the file structuring.
 
