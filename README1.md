@@ -37,8 +37,27 @@ The above Architecture explains a lot.
 Example:
 Serial Number  q1w2e3r4t5y6u7
 Other fields   q1w2e3r4t5y6u7: other field value
-•	The collection name of serial number and all other fields are fetched from device type config.
-•	Once all the data is inserted a message with success count, failure count and appropriate message are shown.
+*	The collection name of serial number and all other fields are fetched from device type config.
+*	Once all the data is inserted a message with success count, failure count and appropriate message are shown.
+
+
+.
++-- _config
+|   +-- configs
+|   	+-- connect.conf.json
++-- _includes
+|   +-- footer.html
+|   +-- header.html
++-- _layouts
+|   +-- default.html
+|   +-- post.html
++-- _posts
+|   +-- 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   +-- 2009-04-26-barcamp-boston-4-roundup.textile
++-- _data
+|   +-- members.yml
++-- _site
++-- index.html
 
 
 
