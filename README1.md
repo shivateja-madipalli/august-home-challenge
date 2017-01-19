@@ -6,7 +6,7 @@ The whole processing is in this file.
 
 The Architecture of the application:
 
-![Alt text](/new_changes/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png?raw=true "Optional Title")
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png?raw=true "Optional Title")
 
 The above Architecture explains a lot.
 
