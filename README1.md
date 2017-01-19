@@ -33,82 +33,48 @@ The above Architecture explains a lot.
 
 ![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%202.44.30%20PM.png?raw=true "")
 
+_Example:_
 
-Example:
-Serial Number  q1w2e3r4t5y6u7
-Other fields   q1w2e3r4t5y6u7: other field value
-*	The collection name of serial number and all other fields are fetched from device type config.
-*	Once all the data is inserted a message with success count, failure count and appropriate message are shown.
+* Serial Number  q1w2e3r4t5y6u7
+* Other fields   q1w2e3r4t5y6u7: other field value
+
+* The collection name of serial number and all other fields are fetched from device type config.
+* Once all the data is inserted a message with success count, failure count and appropriate message are shown.
+
 
 _Project Structure_
 
-* config
+![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%204.40.17%20PM.png?raw=true "")
 
- * configs
-  * connect.conf.json
-  * deviceType.js
-  * doorbell.conf.json
-* csv
-  * connect.csv
-  * doorbell.csv
- * driver.js
- * getDeviceConfig.js
- * sanityCheck.js
-* importManufacturingData.js 
-* package.json
+* The tree structure above explains about the file structuring.
 
-```
-project
-│   README.md
-│   file001.txt    
-│
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
-│   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
-│   
-└───folder2
-    │   file021.txt
-    │   file022.txt
-```
+* /config has all the configuration related file such as 
 
+* /csv  device csv files
 
-The tree structure above explains about the file structuring.
+* getDeviceConfig.js  Is used for retrieving device config files.
 
-/config has all the configuration related file such as 
+* /configs  has all config files and deviceType.js which provides api to retrieving and processing the data.
 
-/csv  device csv files
+### Important pointers:
+* A common database is used for all collections. The collection name would be the dbName from device config file.
+* Multiple devices with same fields data would be inserted in common collections.
+* Serial Number is used as the Primary Key.
+* The provider's file's first line includes a headers line.
+* For each device type, the importManufacturingData will know what headers are expected through some configuration.
+* The system will abort if there is a missing required column.
+* The system will not import a row if some data doesn't match the specified criteria.
 
-getDeviceConfig.js  Is used for retrieving device config files.
+### Limitations:
+* Currently, to import a config file, it should be placed in config/configs/ and need to be required in getDeviceConfig.js, where there is a switch case to return the appropriate config file per the device name.
+* File format is limited to csv files.
 
-/configs  has all config files and deviceType.js which provides api to retrieving and processing the data.
+### Future Enhancements:
+* The File format need not be restricted.
+* System can be made to accept any config file available just by placing at specified location.
+* Instead of collections, the data can be saved in individual database using connectionpool.
 
-Important pointers:
-•	A common database is used for all collections. The collection name would be the dbName from device config file.
-•	Multiple devices with same fields data would be inserted in common collections.
-•	Serial Number is used as the Primary Key.
-•	
-The provider's file's first line includes a headers line.
-
-•	For each device type, the importManufacturingData will know what headers are expected through some configuration.
-
-•	The system will abort if there is a missing required column.
-
-•	The system will not import a row if some data doesn't match the specified criteria.
-
-
-
-Limitations:
-•	Currently, to import a config file, it should be placed in config/configs/ and need to be required in getDeviceConfig.js, where there is a switch case to return the appropriate config file per the device name.
-•	File format is limited to csv files.
-
-Future Enhancements:
-•	The File format need not be restricted.
-•	System can be made to accept any config file available just by placing at specified location.
-•	Instead of collections, the data can be saved in individual database using connectionpool.
+_Shivateja(Shiv) Madipalli_
+_https://shivatejam.com_
 
 
