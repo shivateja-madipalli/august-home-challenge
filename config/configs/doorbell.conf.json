@@ -15,7 +15,7 @@
     "ignore" : false,
     "dbName" : "augfirmware",
     "criteria" : "",
-    "type" : "string"
+    "type" : "semver"
   },{
     "headerName" : "battserialnumber",
     "ignore" : false,

@@ -11,10 +11,15 @@
   "dependencies": {
     "command-line-args": "^3.0.5",
     "csv": "^1.1.0",
+    "isodate": "^0.1.4",
     "line-by-line": "^0.1.5",
     "lodash": "^4.17.4",
+    "log-symbols": "^1.0.2",
+    "moment": "^2.17.1",
     "mongodb": "^2.2.21",
     "mongoose": "^4.7.7",
-    "promise": "^7.1.1"
+    "promise": "^7.1.1",
+    "regex-iso-date": "^1.0.0",
+    "semver-regex": "^1.0.0"
   }
 }

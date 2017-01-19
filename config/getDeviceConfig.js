@@ -16,7 +16,10 @@ GetDeviceConfig.prototype.getConfig = function() {
 
     case "doorbell":
       return doorbellConfig;
-      
+
+    default:
+      return null;
+
   }
 }
 
