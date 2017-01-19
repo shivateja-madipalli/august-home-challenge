@@ -6,7 +6,7 @@ The whole processing is in this file.
 
 The Architecture of the application:
 
-(![alt tag](https://raw.githubusercontent.com/shivateja-madipalli/august-home-challenge/blob/new_changes/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png)
+![alt tag](https://raw.githubusercontent.com/shivateja-madipalli/august-home-challenge/blob/new_changes/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png)
 
 The above Architecture explains a lot.
 
