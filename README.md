@@ -1,6 +1,6 @@
 # August Home Import Manufacturing Data 
 
-####importingManufacturingDate.js:
+### importingManufacturingDate.js:
 
 The whole processing is in this file.
 
@@ -8,13 +8,13 @@ The Architecture of the application:
 
 ![Alt text](/screenshots/Screen%20Shot%202017-01-18%20at%204.07.01%20PM.png?raw=true "")
 
-The above Architecture explains a lot.
+_Explaination:_
 
-•	Take command line args and I use line-by-line package to read the contents of the file (I have used csv files).
-•	While processing one line at a time, split with ‘,’ and check if all Headers are present, if any (ignore:false) header is missing then I am aborting the process.
-•	If all the headers are present, sanity check for different fields (dependent on the device config) will take place to check if all the fields are within the specified criteria.
-•	If Serial Number is available in previous records, then the error message is shown and process is aborted.
-•	If Serial Number is not available in previous records, then it will be inserted first and the serial number is used as key for other records.
+* Take command line args and I use line-by-line package to read the contents of the file (I have used csv files).
+* While processing one line at a time, split with ‘,’ and check if all Headers are present, if any (ignore:false) header is missing then I am aborting the process.
+* If all the headers are present, sanity check for different fields (dependent on the device config) will take place to check if all the fields are within the specified criteria.
+* If Serial Number is available in previous records, then the error message is shown and process is aborted.
+* If Serial Number is not available in previous records, then it will be inserted first and the serial number is used as key for other records.
 
 ### node importManufacturingData.js doorbell config/csv/doorbell.csv
 
